@@ -1,4 +1,4 @@
-import {Data, Payload} from '@/types/shared';
+import { Data, Payload } from '@/types/shared';
 
 const goodData: Data = {
   payload: {
@@ -40,7 +40,7 @@ const goodData: Data = {
   referenceData: { REF_MSISDN: '0406679321', REF_IMSI: '50002312344314', REF_SERVPROFID: '2' },
 };
 
-const goodTransformedPayload: Payload= {
+const goodTransformedPayload: Payload = {
   name: 'subscriber',
   valueType: 'array',
   value: [
