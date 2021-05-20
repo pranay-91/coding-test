@@ -192,3 +192,15 @@
  ```
  
  #### Dockerize the application.
+
+### Setup for dev
+1. Clone the repo.
+2. Install node packages using `npm install`.
+3. (Not essesntial) Setup husy for pre-commit checks, run `npm run prepare`.
+4. Run unit tests. `npm run test`.
+5. Build and complie. `npm run build`.
+6. Run the application. `npm run start`. Uses `localhost` and `PORT: 8080` internally by default unless set explicitly via Env variables. See `config/index.ts` file.
+
+### Running via docker
+1. Build docker image via `Dockerfile`. Go to root directory. Run `docker build -t <name-of-image> .`
+2. Run docker image and expose service in desired port. Run `docker run -p 8080:<external port> < name-of-image>.`
