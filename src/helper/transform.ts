@@ -1,5 +1,10 @@
 import { Payload, Data } from '../types/shared';
 
+/**
+ * A recursive function which traverses a payload (JSON Object) and replaces value with reference data.
+ * @param payload - payload to be transformed
+ * @param referenceData - reference data to replace fields
+ */
 const transformRecursive = (payload: Payload, referenceData: Data['refenceData']): void => {
   for (const property in payload) {
     if (typeof payload[property] === 'object') {
