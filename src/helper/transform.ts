@@ -15,4 +15,4 @@ const transformRecursive = (payload: Payload, referenceData: Data['refenceData']
     }
   }
 };
-export  {transformRecursive};
+export { transformRecursive };

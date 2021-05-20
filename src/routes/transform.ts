@@ -1,13 +1,13 @@
 import { Router, Request, Response } from 'express';
 import HttpStatus from 'http-status-codes';
-import {transformRecursive} from '../helper/transform';
+import { transformRecursive } from '../helper/transform';
 import { Payload, Data } from '../types/shared';
 import { transformSchema } from './/schema/transform';
 
 const router = Router();
 
 /**
- * Transform POST routes. 
+ * Transform POST routes.
  * Returns transformed payload replacing payload with reference Data.
  */
 router.post('/', (req: Request, res: Response) => {

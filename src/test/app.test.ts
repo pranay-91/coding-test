@@ -49,7 +49,7 @@ describe('functional - transform', () => {
     describe('POST', () => {
       it('should return transformed payload.', async () => {
         const res = await request(app).post('/transform').send(goodData);
-       
+
         expect(res.status).to.equal(HttpStatus.OK);
         expect(res.body).to.deep.equal(goodTransformedPayload);
       });
@@ -58,7 +58,7 @@ describe('functional - transform', () => {
         // add a stub that acts as a helper transformRecursive transform function
         const getTransformRecursiveStub = sandbox.stub(helper, 'transformRecursive').resolves(goodTransformedPayload);
         const res = await request(app).post('/transform').send(goodData);
-        
+
         expect(res.status).to.equal(HttpStatus.OK);
         expect(res.body).to.deep.equal(goodTransformedPayload);
         expect(getTransformRecursiveStub.calledOnce).to.equal(true); // helper method should be invokved atleast once.
@@ -73,7 +73,7 @@ describe('functional - transform', () => {
           },
         };
         const res = await request(app).post('/transform').send(badData);
-        
+
         expect(res.status).to.equal(HttpStatus.BAD_REQUEST);
         // should return a validation error with appropriate validation message.
         expect(res.body).to.have.deep.property('reason');
