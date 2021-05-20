@@ -1,9 +1,10 @@
+import '../aliases';
 import { expect } from 'chai';
 import request from 'supertest';
 import HttpStatus from 'http-status-codes';
-import app from '../app';
-import { goodData, goodTransformedPayload } from '../test/fixtures';
-import * as helper from '../helper/transform';
+import app from '@/app';
+import { goodData, goodTransformedPayload } from '@/test/fixtures';
+import * as helper from '@/helper/transform';
 import { createSandbox, SinonSandbox } from 'sinon';
 
 /**

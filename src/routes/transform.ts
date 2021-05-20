@@ -1,8 +1,8 @@
 import { Router, Request, Response } from 'express';
 import HttpStatus from 'http-status-codes';
-import { transformRecursive } from '../helper/transform';
-import { Payload, Data } from '../types/shared';
-import { transformSchema } from './/schema/transform';
+import { transformRecursive } from '@/helper/transform';
+import { Payload, Data } from '@/types/shared';
+import { transformSchema } from './schema/transform';
 
 const router = Router();
 

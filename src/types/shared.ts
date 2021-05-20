@@ -9,5 +9,5 @@ export interface Payload extends JSONObject {
 
 export interface Data extends JSONObject {
   payload: Payload;
-  refenceData: JSONObject;
+  referenceData: JSONObject;
 }

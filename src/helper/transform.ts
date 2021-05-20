@@ -1,4 +1,4 @@
-import { Payload, Data } from '../types/shared';
+import { Payload, Data } from '@/types/shared';
 
 /**
  * A recursive function which traverses a payload (JSON Object) and replaces value with reference data.
