@@ -1,5 +1,8 @@
 import Joi from '@hapi/joi';
 
+/**
+ * Schema to validate data payload
+ */
 const payload = Joi.object({
   name: Joi.string().required().description('Name of the payload'),
   valueType: Joi.valid('string', 'array')

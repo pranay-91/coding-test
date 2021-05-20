@@ -1,17 +1,21 @@
 import { Router, Request, Response } from 'express';
 import HttpStatus from 'http-status-codes';
-import transformRecursive from '../helper/transform';
+import {transformRecursive} from '../helper/transform';
 import { Payload, Data } from '../types/shared';
 import { transformSchema } from './/schema/transform';
 
 const router = Router();
 
+/**
+ * Transform POST routes. 
+ * Returns transformed payload replacing payload with reference Data.
+ */
 router.post('/', (req: Request, res: Response) => {
   try {
     const { body } = req;
     const result = transformSchema.validate(req.body);
     if (result.error) {
-      res.status(HttpStatus.BAD_REQUEST).json(result.error.message);
+      res.status(HttpStatus.BAD_REQUEST).json({ reason: 'Validation Error', message: result.error.message });
     } else {
       const data: Data = { ...body };
       const payload: Payload = { ...data.payload };
